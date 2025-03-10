@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "name": "Margherita Pizza",
+    "image": "https://cdn.loveandlemons.com/wp-content/uploads/opengraph/2023/07/margherita-pizza-recipe.jpg",
+    "description": "Classic Italian pizza with the tast that takes you to a new world.",
+    "price": 9.99,
+    "category": "Main Course",
+    "ingredients": ["Margherita","Cheese","Pizza Sauce"]
+
+  },
+  {
+    "id": "2",
+    "name": "Cheesecake",
+    "image": "https://www.allrecipes.com/thmb/DHosjm3NundSDP1q6wWEEECYwr8=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/8419-easy-sour-cream-cheesecake-DDMFS-beauty-4x3-BG-2747-44b427d330aa41aa876269b1249698a0.jpg",
+    "description": "Creamy cheesecake with a buttery crust and berry topping.",
+    "price": 5.49,
+    "category": "Desserts"
+  }
+]
