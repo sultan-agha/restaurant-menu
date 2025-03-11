@@ -65,29 +65,41 @@ class HomeController extends GetxController {
       }
     });
   }
+
   void updateSearch(String query) {
     searchText.value = query;
+
+    // Remove all existing items in AnimatedList before updating
     for (int i = searchedMenu.length - 1; i >= 0; i--) {
       listKey.currentState?.removeItem(
         i,
-            (context, animation) => const SizedBox.shrink(), // Remove without animation
+            (context, animation) => const SizedBox.shrink(),
         duration: const Duration(milliseconds: 100),
       );
     }
+
     Future.delayed(const Duration(milliseconds: 120), () {
       searchedMenu.clear(); // Now it's safe to clear
+
       if (query.isEmpty) {
-        searchedMenu.assignAll(filteredMenu); // Search within the filtered list, not full menu
+        // If search is empty, return to the currently selected category
+        searchedMenu.assignAll(filteredMenu);
       } else {
+        // Search the entire menu, ignoring the category filter
         searchedMenu.assignAll(
-            filteredMenu.where((dish) => dish.name.toLowerCase().contains(query.toLowerCase()))
+          menu.where((dish) => dish.name.toLowerCase().contains(query.toLowerCase())),
         );
       }
-      // Insert new items with animation
-      for (int i = 0; i < searchedMenu.length; i++) {
-        listKey.currentState?.insertItem(i);
+
+      // Ensure the index is valid before inserting items back
+      if (listKey.currentState != null) {
+        for (int i = 0; i < searchedMenu.length; i++) {
+          listKey.currentState?.insertItem(i);
+        }
       }
     });
   }
+
+
 
 }
