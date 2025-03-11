@@ -10,17 +10,26 @@ class CategoryFilter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      return DropdownButton<String>(
-        value: controller.selectedCategory.value,
-        items: controller.categories.map((String category) {
-          return DropdownMenuItem<String>(
-            value: category,
-            child: Text(category),
-          );
-        }).toList(),
-        onChanged: (value) {
-          if (value != null) controller.filterByCategory(value);
-        },
+      return Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          const Text("Categories:",style: TextStyle(
+            fontWeight: FontWeight.w400,
+            fontSize: 20
+          ),),
+          DropdownButton<String>(
+            value: controller.selectedCategory.value,
+            items: controller.categories.map((String category) {
+              return DropdownMenuItem<String>(
+                value: category,
+                child: Text(category),
+              );
+            }).toList(),
+            onChanged: (value) {
+              if (value != null) controller.filterByCategory(value);
+            },
+          ),
+        ],
       );
     });
   }

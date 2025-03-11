@@ -16,5 +16,13 @@
     "description": "Creamy cheesecake with a buttery crust and berry topping.",
     "price": 5.49,
     "category": "Desserts"
+  },
+  {
+    "id": "3",
+    "name": "CheeseBurger",
+    "image": "https://assets.epicurious.com/photos/5c745a108918ee7ab68daf79/1:1/w_2560%2Cc_limit/Smashburger-recipe-120219.jpg",
+    "description": "juicy meatBurger with a joy of the cheese .",
+    "price": 4.56,
+    "category": "Main Course"
   }
 ]
