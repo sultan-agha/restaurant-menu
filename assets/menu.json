@@ -24,5 +24,21 @@
     "description": "juicy meatBurger with a joy of the cheese .",
     "price": 4.56,
     "category": "Main Course"
+  },
+  {
+    "id": "4",
+    "name": "Curley Fries",
+    "image": "https://www.culinaryhill.com/wp-content/uploads/2022/06/Curly-Fries-Culinary-Hill-1200x800-1.jpg",
+    "description": "Curley fries with special taste.",
+    "price": 1.50,
+    "category": "Starters"
+  },
+  {
+    "id": "5",
+    "name": "Pepsi",
+    "image": "https://e3.365dm.com/23/03/1600x900/skynews-pepsi-cola_6102187.jpg?20230328114227",
+    "description": " ",
+    "price": 0.60,
+    "category": "Drinks"
   }
 ]

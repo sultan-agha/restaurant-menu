@@ -28,7 +28,6 @@ class HomeController extends GetxController {
     fetchMenu();
     super.onInit();
   }
-
   void fetchMenu() async {
     try {
       isLoading(true);
@@ -42,23 +41,53 @@ class HomeController extends GetxController {
   }
 
   void filterByCategory(String category) {
-    selectedCategory.value = category;
-      if (category == 'All') {
-        filteredMenu.assignAll(menu);
-      } else {
-        filteredMenu.assignAll(menu.where((dish) => dish.category == category));
-      }
-  }
-
-
-  void updateSearch(String query) {
-    searchText.value = query;
-    if (query.isEmpty) {
-      searchedMenu.assignAll(menu);
-    } else {
-      searchedMenu.assignAll(
-          menu.where((dish) => dish.name.toLowerCase().contains(query.toLowerCase()))
+      selectedCategory.value = category;
+    // Remove all items from AnimatedList first
+    for (int i = filteredMenu.length - 1; i >= 0; i--) {
+      listKey.currentState?.removeItem(
+        i,
+            (context, animation) => const SizedBox.shrink(), // Remove without animation
+        duration: const Duration(milliseconds: 100),
       );
     }
+
+    Future.delayed(const Duration(milliseconds: 120), () {
+      filteredMenu.clear(); // Now it's safe to clear
+          if (category == 'All') {
+            filteredMenu.assignAll(menu);
+          }else {
+            filteredMenu.assignAll(
+                menu.where((dish) => dish.category == category));
+          }
+      // Insert new items with animation
+      for (int i = 0; i < filteredMenu.length; i++) {
+        listKey.currentState?.insertItem(i);
+      }
+    });
   }
+  void updateSearch(String query) {
+    searchText.value = query;
+    for (int i = searchedMenu.length - 1; i >= 0; i--) {
+      listKey.currentState?.removeItem(
+        i,
+            (context, animation) => const SizedBox.shrink(), // Remove without animation
+        duration: const Duration(milliseconds: 100),
+      );
+    }
+    Future.delayed(const Duration(milliseconds: 120), () {
+      searchedMenu.clear(); // Now it's safe to clear
+      if (query.isEmpty) {
+        searchedMenu.assignAll(filteredMenu); // Search within the filtered list, not full menu
+      } else {
+        searchedMenu.assignAll(
+            filteredMenu.where((dish) => dish.name.toLowerCase().contains(query.toLowerCase()))
+        );
+      }
+      // Insert new items with animation
+      for (int i = 0; i < searchedMenu.length; i++) {
+        listKey.currentState?.insertItem(i);
+      }
+    });
+  }
+
 }

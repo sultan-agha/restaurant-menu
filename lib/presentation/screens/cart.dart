@@ -4,8 +4,10 @@ import '../../domain/entities/dish.dart';
 import '../controller/cart_controller.dart';
 
 class CartPage extends StatelessWidget {
-  final CartController controller = Get.find<CartController>();
 
+  CartPage({super.key});
+
+  final CartController controller = Get.find<CartController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
