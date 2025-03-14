@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import '../../domain/entities/dish.dart';
+import '../../../domain/entities/dish.dart';
 
 class CartController extends GetxController {
   var cartItems = <Dish, int>{}.obs;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:restaurant_menu/presentation/controller/home_controller.dart';
+import 'package:restaurant_menu/presentation/controller/home/home_controller.dart';
 
 class SearchBarWidget extends StatelessWidget {
   final HomeController controller = Get.find<HomeController>();

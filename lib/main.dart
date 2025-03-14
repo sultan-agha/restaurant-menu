@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:restaurant_menu/presentation/controller/cart/cart_binding.dart';
+import 'package:restaurant_menu/presentation/controller/favorite/favorite_binding.dart';
+import 'package:restaurant_menu/presentation/controller/home/home-binding.dart';
+import 'package:restaurant_menu/presentation/screens/cart.dart';
 import 'package:restaurant_menu/presentation/screens/home.dart';
 import 'package:get/get.dart';
 import 'package:restaurant_menu/core/dependency_injection.dart';
@@ -20,12 +24,19 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+        initialBinding: HomeBinding(),
+        initialRoute: '/',
+        getPages: [
+          GetPage(name: '/', page: () => const HomePage(), binding: HomeBinding()),
+          GetPage(name: '/cart', page: () => CartPage(), binding: CartBinding()),
+          //GetPage(name: '/favorite', page: () => FavoritePage(), binding: FavoriteBinding()),
+        ],
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-        home: HomePage()
+        home: const HomePage()
     );
   }
 }

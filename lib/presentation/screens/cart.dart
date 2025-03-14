@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../domain/entities/dish.dart';
-import '../controller/cart_controller.dart';
+import '../controller/cart/cart_controller.dart';
 
-class CartPage extends StatelessWidget {
+class CartPage extends GetView<CartController>{
 
-  CartPage({super.key});
+  const CartPage({super.key});
 
-  final CartController controller = Get.find<CartController>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

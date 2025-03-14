@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../controller/home_controller.dart';
+import '../controller/home/home_controller.dart';
 
 class CategoryFilter extends StatelessWidget {
   final HomeController controller = Get.find<HomeController>();

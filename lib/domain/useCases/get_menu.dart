@@ -1,14 +1,13 @@
+import 'package:restaurant_menu/core/useCases/no_param_usecase.dart';
 import 'package:restaurant_menu/data/models/dish_model.dart';
+import '../repositories/menu_repository.dart';
 
-import '../../data/repositories/menu_repository.dart';
-import '../entities/dish.dart';
-
-class GetMenuUseCase {
+class GetMenuUseCase extends NoParamUseCase {
   final MenuRepository repository;
 
   GetMenuUseCase(this.repository);
-
-  Future<List<DishModel>> call() async {
-    return await repository.fetchMenu();
+  @override
+  Future execute() {
+    return  repository.getMenuItems();
   }
 }

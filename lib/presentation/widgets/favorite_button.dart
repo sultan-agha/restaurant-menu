@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../domain/entities/dish.dart';
-import '../controller/favorite_controller.dart';
+import '../controller/favorite/favorite_controller.dart';
 
 class FavoriteButton extends StatelessWidget {
   final Dish dish;

@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
-import '../../domain/entities/dish.dart';
+import '../../../domain/entities/dish.dart';
 import 'package:get_storage/get_storage.dart';
 
-import 'home_controller.dart';
+import '../home/home_controller.dart';
 
 class FavoritesController extends GetxController {
   var favorites = <Dish>[].obs;

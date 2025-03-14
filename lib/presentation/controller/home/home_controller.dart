@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:restaurant_menu/data/models/dish_model.dart';
-import '../../domain/entities/dish.dart';
-import '../../domain/useCases/get_menu.dart';
+import '../../../domain/entities/dish.dart';
+import '../../../domain/useCases/get_menu.dart';
 
 class HomeController extends GetxController {
   final GetMenuUseCase getMenuUseCase;
@@ -31,7 +31,7 @@ class HomeController extends GetxController {
   void fetchMenu() async {
     try {
       isLoading(true);
-      menu.value = await getMenuUseCase();
+      menu.value = await getMenuUseCase.execute();
       filteredMenu.assignAll(menu);
     } catch (e) {
       print("Error loading menu: $e");
