@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:restaurant_menu/presentation/controller/cart/cart_binding.dart';
-import 'package:restaurant_menu/presentation/controller/favorite/favorite_binding.dart';
 import 'package:restaurant_menu/presentation/controller/home/home-binding.dart';
-import 'package:restaurant_menu/presentation/screens/cart.dart';
 import 'package:restaurant_menu/presentation/screens/home.dart';
 import 'package:get/get.dart';
 import 'package:restaurant_menu/core/dependency_injection.dart';

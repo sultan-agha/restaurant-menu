@@ -20,7 +20,7 @@ class HomePage extends GetView<HomeController> {
         centerTitle: true,
         leading: IconButton(
           onPressed: (){
-            Get.to(() => CartPage(),
+            Get.to(() => const CartPage(),
               transition: Transition.fadeIn, // Smooth transition
             );
           },
