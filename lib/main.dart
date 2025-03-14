@@ -26,11 +26,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
         initialBinding: HomeBinding(),
         initialRoute: '/',
-        getPages: [
-          GetPage(name: '/', page: () => const HomePage(), binding: HomeBinding()),
-          GetPage(name: '/cart', page: () => CartPage(), binding: CartBinding()),
-          //GetPage(name: '/favorite', page: () => FavoritePage(), binding: FavoriteBinding()),
-        ],
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
